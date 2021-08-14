@@ -8,6 +8,9 @@ license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/hexatester/sdgs-dashboard"
 repository = "https://github.com/hexatester/sdgs-dashboard"
+packages = [
+    { include = "sdgs" },
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
