@@ -10,6 +10,7 @@ requests = "^2.26.0"
 beautifulsoup4 = "^4.9.3"
 attrs = "^21.2.0"
 cattrs = "^1.8.0"
+ujson = "^4.0.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
