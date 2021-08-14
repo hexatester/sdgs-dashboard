@@ -1,8 +1,23 @@
 [tool.poetry]
 name = "sdgs-dashboard"
 version = "0.1.0"
-description = ""
+description = " Modul python untuk dashboard sdgs kemendesa."
 authors = ["hexatester <hexatester@protonmail.com>"]
+keywords = ["sdgs", "sdgs-dashboard", "kemendesa"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/hexatester/sdgs-dashboard"
+repository = "https://github.com/hexatester/sdgs-dashboard"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.7.10"
