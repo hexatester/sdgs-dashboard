@@ -1,9 +1,10 @@
-from typing import List, TYPE_CHECKING
+from typing import Any, List, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from sdgs_tools.sdgs import Sdgs
+    from sdgs import Sdgs
 
 from . import SurveyPagedData
+from sdgs import SdgsResponse
 
 
 class SurveyIndividu:
@@ -44,5 +45,16 @@ class SurveyIndividu:
         return self.sdgs.api_post_to_res(
             "surveyIndividu/getSurveyPagedData",
             List[SurveyPagedData],
+            json=json_data,
+        )
+
+    def validateNik(
+        self,
+        nik: str,
+    ):
+        json_data = {"nik": nik}
+        return self.sdgs.api_post_to_res(
+            "surveyIndividu/validateNik",
+            str,
             json=json_data,
         )
