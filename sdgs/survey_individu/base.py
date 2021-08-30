@@ -10,6 +10,22 @@ class SurveyIndividu:
     def __init__(self, sdgs: "Sdgs"):
         self.sdgs = sdgs
 
+    def __call__(
+        self,
+        page: int = 1,
+        search: str = "",
+        pageSize: int = 50,
+        isSortAsc: bool = True,
+        kodeDesa: str = None,
+    ) -> List[SurveyPagedData]:
+        return self.getSurveyPagedData(
+            page=page,
+            search=search,
+            pageSize=pageSize,
+            isSortAsc=isSortAsc,
+            kodeDesa=kodeDesa,
+        )
+
     def getSurveyPagedData(
         self,
         page: int = 1,
