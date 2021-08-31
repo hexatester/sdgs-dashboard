@@ -4,45 +4,46 @@ from typing import Dict
 
 @attr.dataclass
 class PenyakitDiderita:
-    mutaber_diare: str
-    demam_berdarah: str
-    campak: str
-    malaria: str
-    flu_burung_sars: str
-    covid19: str
-    hepatitis_b: str
-    hepatitis_e: str
-    difteri: str
-    chikungunya: str
-    leptospirosis: str
-    kolera: str
-    gizi_buruk: str
-    jantung: str
-    tbc_paru_paru: str
-    kanker: str
-    diabetes: str
-    lumpuh: str
-    lainnya: str
+    # P404
+    mutaber_diare: bool
+    demam_berdarah: bool
+    campak: bool
+    malaria: bool
+    flu_burung_sars: bool
+    covid19: bool
+    hepatitis_b: bool
+    hepatitis_e: bool
+    difteri: bool
+    chikungunya: bool
+    leptospirosis: bool
+    kolera: bool
+    gizi_buruk: bool
+    jantung: bool
+    tbc_paru_paru: bool
+    kanker: bool
+    diabetes: bool
+    lumpuh: bool
+    lainnya: bool
 
     def todict(self) -> Dict[str, str]:
         return {
-            "1": self.mutaber_diare,
-            "2": self.demam_berdarah,
-            "3": self.campak,
-            "4": self.malaria,
-            "5": self.flu_burung_sars,
-            "6": self.covid19,
-            "7": self.hepatitis_b,
-            "8": self.hepatitis_e,
-            "9": self.difteri,
-            "10": self.chikungunya,
-            "11": self.leptospirosis,
-            "12": self.kolera,
-            "13": self.gizi_buruk,
-            "14": self.jantung,
-            "15": self.tbc_paru_paru,
-            "16": self.kanker,
-            "17": self.diabetes,
-            "18": self.lumpuh,
-            "19": self.lainnya,
+            "1": "1" if self.mutaber_diare else "2",
+            "2": "1" if self.demam_berdarah else "2",
+            "3": "1" if self.campak else "2",
+            "4": "1" if self.malaria else "2",
+            "5": "1" if self.flu_burung_sars else "2",
+            "6": "1" if self.covid19 else "2",
+            "7": "1" if self.hepatitis_b else "2",
+            "8": "1" if self.hepatitis_e else "2",
+            "9": "1" if self.difteri else "2",
+            "10": "1" if self.chikungunya else "2",
+            "11": "1" if self.leptospirosis else "2",
+            "12": "1" if self.kolera else "2",
+            "13": "1" if self.gizi_buruk else "2",
+            "14": "1" if self.jantung else "2",
+            "15": "1" if self.tbc_paru_paru else "2",
+            "16": "1" if self.kanker else "2",
+            "17": "1" if self.diabetes else "2",
+            "18": "1" if self.lumpuh else "2",
+            "19": "1" if self.lainnya else "2",
         }
