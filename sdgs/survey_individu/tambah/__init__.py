@@ -9,6 +9,8 @@ from .penghasilan import Penghasilan
 from .penyakit_diderita import PenyakitDiderita
 from .status_pernikahan import StatusPernikahan
 
+from .individu import TambahIndividu
+
 
 __all__ = [
     "Agama",
@@ -21,4 +23,5 @@ __all__ = [
     "Penghasilan",
     "PenyakitDiderita",
     "StatusPernikahan",
+    "TambahIndividu",
 ]

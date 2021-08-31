@@ -3,7 +3,7 @@ from typing import Any, List, TYPE_CHECKING
 if TYPE_CHECKING:
     from sdgs import Sdgs
 
-from . import SurveyPagedData
+from . import SurveyPagedData, TambahIndividu
 from sdgs import SdgsResponse
 
 
@@ -55,6 +55,14 @@ class SurveyIndividu:
         json_data = {"nik": nik}
         return self.sdgs.api_post_to_res(
             "surveyIndividu/validateNik",
+            str,
+            json=json_data,
+        )
+
+    def save(self, individu: TambahIndividu):
+        json_data = individu.todict()
+        return self.sdgs.api_post_to_res(
+            "surveyIndividu/save",
             str,
             json=json_data,
         )
