@@ -1,8 +1,11 @@
+import cattr
 from typing import Any, List, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from sdgs import Sdgs
 
+from .tambah import Penghasilan
+from .tambah import PenyakitDiderita
 from . import SurveyPagedData, TambahIndividu
 from sdgs import SdgsResponse
 
@@ -10,6 +13,8 @@ from sdgs import SdgsResponse
 class SurveyIndividu:
     def __init__(self, sdgs: "Sdgs"):
         self.sdgs = sdgs
+        cattr.register_unstructure_hook(Penghasilan, Penghasilan.todict)
+        cattr.register_unstructure_hook(PenyakitDiderita, PenyakitDiderita.todict)
 
     def __call__(
         self,
