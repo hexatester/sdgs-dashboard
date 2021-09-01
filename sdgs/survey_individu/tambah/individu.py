@@ -81,7 +81,7 @@ class TambahIndividu:
     usia: str
     status_pernikahan: StatusPernikahan
     usia_menikah: Optional[str]
-    agama: str
+    agama: Agama
     suku_bangsa: str
     warga_negara: str
     nomor_hp: str
@@ -94,9 +94,9 @@ class TambahIndividu:
     akses_melalui: Optional[str]
     kecepatan_internet: str
     kondisi_pekerjaan: KondisiPekerjaan
-    pekerjaan_utama: PekerjaanUtama
-    pekerjaan_utama_comment: str
-    jaminan_sosial_ketenagakerjaan: str
+    pekerjaan_utama: Optional[PekerjaanUtama]
+    pekerjaan_utama_comment: Optional[str]
+    jaminan_sosial_ketenagakerjaan: Optional[str]
     penghasilan: List[Penghasilan]
     pekerjaan_penghasilan: str
     # P400
@@ -130,6 +130,24 @@ class TambahIndividu:
     provinsi: str
     rt: str
     rw: str
+
+    def __attrs_post_init__(self) -> None:
+        if self.status_pernikahan.bu and not self.usia_menikah:
+            raise ValueError(
+                f"{self.nik} Mohon diisi usia menikah, apabila sudah menikah"
+            )
+        if self.aktif_internet and not self.akses_melalui:
+            raise ValueError(f"{self.nik} Mohon diisi usia menikah")
+        if self.kondisi_pekerjaan == KondisiPekerjaan.BEKERJA:
+            if not self.pekerjaan_utama:
+                raise ValueError(f"{self.nik} Mohon diisi pekerjaan utama, jika bekerja")
+            if self.pekerjaan_utama == PekerjaanUtama.LAINNYA and not self.pekerjaan_utama_comment:
+                raise ValueError(f"{self.nik} Mohon diisi nama pekerjaan utama, jika kondisinya lainnya")
+            if not self.jaminan_sosial_ketenagakerjaan:
+                raise ValueError(f"{self.nik} Mohon diisi jamsos ketenagakerjaan, jika bekerja")
+        else:
+            # TODO Isi Penghasilan
+            pass
 
     def todict(self) -> Dict[str, Any]:
         data: Dict[str, Any] = dict()
