@@ -5,25 +5,25 @@ from typing import Dict
 @attr.dataclass
 class PenyakitDiderita:
     # P404
-    mutaber_diare: bool
-    demam_berdarah: bool
-    campak: bool
-    malaria: bool
-    flu_burung_sars: bool
-    covid19: bool
-    hepatitis_b: bool
-    hepatitis_e: bool
-    difteri: bool
-    chikungunya: bool
-    leptospirosis: bool
-    kolera: bool
-    gizi_buruk: bool
-    jantung: bool
-    tbc_paru_paru: bool
-    kanker: bool
-    diabetes: bool
-    lumpuh: bool
-    lainnya: bool
+    mutaber_diare: bool = False
+    demam_berdarah: bool = False
+    campak: bool = False
+    malaria: bool = False
+    flu_burung_sars: bool = False
+    covid19: bool = False
+    hepatitis_b: bool = False
+    hepatitis_e: bool = False
+    difteri: bool = False
+    chikungunya: bool = False
+    leptospirosis: bool = False
+    kolera: bool = False
+    gizi_buruk: bool = False
+    jantung: bool = False
+    tbc_paru_paru: bool = False
+    kanker: bool = False
+    diabetes: bool = False
+    lumpuh: bool = False
+    lainnya: bool = False
 
     def todict(self) -> Dict[str, str]:
         return {
