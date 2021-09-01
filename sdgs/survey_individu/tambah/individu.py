@@ -43,8 +43,8 @@ MAPPING = {
     "I.P402": "fasilitas_kesehatan",
     "I.P403": "jamsos_ketenagakerjaan",
     "I.P404": "penyakit_diderita",
-    # "I.P405": "",
-    # "I.P406": "",
+    "I.P405": "setahun_melahirkan",
+    "I.P406": "mendapat_asi",
     "I.P501": "pendidikan_tertinggi",
     "I.P502": "tahun_pendidikan",
     "I.P505": "bahasa_permukiman",
@@ -90,8 +90,8 @@ class TambahIndividu:
     alamat_facebook: Optional[str]
     alamat_twitter: Optional[str]
     alamat_instagram: Optional[str]
-    aktif_internet: str
-    akses_melalui: str
+    aktif_internet: bool
+    akses_melalui: Optional[str]
     kecepatan_internet: str
     kondisi_pekerjaan: KondisiPekerjaan
     pekerjaan_utama: PekerjaanUtama
@@ -103,6 +103,8 @@ class TambahIndividu:
     penyakit_diderita: PenyakitDiderita
     fasilitas_kesehatan: FasilitasKesehatan
     jamsos_ketenagakerjaan: str
+    setahun_melahirkan: Optional[bool]
+    mendapat_asi: Optional[bool]
     # Pendidikan
     pendidikan_tertinggi: PendidikanTertinggi
     tahun_pendidikan: int
@@ -115,11 +117,11 @@ class TambahIndividu:
     menolong_sakit: str
     menolong_kecelakaan: str
     memperoleh_pelayanan_desa: str
-    pelayanan_desa: str
+    pelayanan_desa: bool
     saran_desa: str
     keterbukaan_desa: str
-    terjadi_bencana: str
-    terdampak_bencana: str
+    terjadi_bencana: bool
+    terdampak_bencana: Optional[bool]
     # Alamat
     kecamatan: str
     kota: str
