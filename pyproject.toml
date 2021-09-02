@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sdgs-dashboard"
-version = "0.1.0"
+version = "0.2.0"
 description = " Modul python untuk dashboard sdgs kemendesa."
 authors = ["hexatester <hexatester@protonmail.com>"]
 keywords = ["sdgs", "sdgs-dashboard", "kemendesa"]
